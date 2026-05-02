@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>FitTrack – Хранене</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="/">Тренировки</a> |
+    <a href="/meals.html">Хранене</a>
+  </nav>
+  <hr>
+
+  <h1>🥗 FitTrack – Хранене</h1>
+
+  <h2>Добави хранене</h2>
+  <form id="mealForm">
+    <input type="text" id="meal_name" placeholder="Име на храна" required>
+    <input type="number" id="calories" placeholder="Калории" required>
+    <button type="submit">Добави</button>
+  </form>
+
+  <h2>Списък с хранения</h2>
+  <ul id="meals"></ul>
+
+  <script src="meals.js"></script>
+</body>
+</html>

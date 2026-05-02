@@ -1,0 +1,16 @@
+{
+  "name": "fittrack",
+  "version": "1.0.0",
+  "description": "The project uses a SQL relational database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3"
+  }
+}

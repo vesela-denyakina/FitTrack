@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+}
+
+form input {
+  margin: 5px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+li {
+  margin: 8px 0;
+}
