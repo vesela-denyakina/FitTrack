@@ -2,29 +2,93 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FitTrack</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="container">
     <nav>
-  <a href="/">Тренировки</a> |
-  <a href="/meals.html">Хранене</a>
-</nav>
-<hr>
-  <h1>🏋️ FitTrack</h1>
-  <p>Проследяване на тренировки</p>
+      <a href="index.html" class="active"><i class="fas fa-dumbbell"></i> Тренировки</a>
+      <a href="meals.html"><i class="fas fa-utensils"></i> Хранене</a>
+    </nav>
 
-  <h2>Добави тренировка</h2>
-  <form id="workoutForm">
-    <input type="text" id="name" placeholder="Име" required>
-    <input type="text" id="description" placeholder="Описание">
-    <input type="number" id="duration" placeholder="Минути" required>
-    <input type="number" step="0.1" id="calories" placeholder="Калории/минута">
-    <button type="submit">Добави</button>
-  </form>
+    <header>
+      <h1><i class="fas fa-dumbbell"></i> FitTrack</h1>
+      <span>Проследяване на тренировки</span>
+    </header>
 
-  <h2>Списък с тренировки</h2>
-  <ul id="workouts"></ul>
+    <div class="card">
+      <h2><i class="fas fa-plus-circle"></i> Добави тренировка</h2>
+      <form id="workoutForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name"><i class="fas fa-tag"></i> Име на тренировката</label>
+            <input type="text" id="name" placeholder="Например: Бягане" required>
+          </div>
+          <div class="form-group">
+            <label for="duration"><i class="fas fa-clock"></i> Продължителност (минути)</label>
+            <input type="number" id="duration" placeholder="30" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="description"><i class="fas fa-comment"></i> Описание</label>
+            <input type="text" id="description" placeholder="Допълнителна информация">
+          </div>
+          <div class="form-group">
+            <label for="calories"><i class="fas fa-fire"></i> Калории/минута</label>
+            <input type="number" step="0.1" id="calories" placeholder="8.5">
+          </div>
+        </div>
+        <button type="submit" class="btn">
+          <i class="fas fa-plus"></i> Добави тренировка
+        </button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2><i class="fas fa-list"></i> Списък с тренировки</h2>
+      <ul id="workouts" class="workout-list"></ul>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2><i class="fas fa-edit"></i> Редактирай тренировка</h2>
+        <form id="editForm">
+          <div class="form-group">
+            <label for="editName"><i class="fas fa-tag"></i> Име на тренировката</label>
+            <input type="text" id="editName" required>
+          </div>
+          <div class="form-group">
+            <label for="editDescription"><i class="fas fa-comment"></i> Описание</label>
+            <input type="text" id="editDescription">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="editDuration"><i class="fas fa-clock"></i> Продължителност (минути)</label>
+              <input type="number" id="editDuration" required>
+            </div>
+            <div class="form-group">
+              <label for="editCalories"><i class="fas fa-fire"></i> Калории/минута</label>
+              <input type="number" step="0.1" id="editCalories">
+            </div>
+          </div>
+          <div class="workout-actions">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">
+              <i class="fas fa-times"></i> Отказ
+            </button>
+            <button type="submit" class="btn">
+              <i class="fas fa-save"></i> Запази
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -2,28 +2,47 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FitTrack – Хранене</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="container">
+    <nav>
+      <a href="index.html"><i class="fas fa-dumbbell"></i> Тренировки</a>
+      <a href="meals.html" class="active"><i class="fas fa-utensils"></i> Хранене</a>
+    </nav>
 
-  <nav>
-    <a href="/">Тренировки</a> |
-    <a href="/meals.html">Хранене</a>
-  </nav>
-  <hr>
+    <header>
+      <h1><i class="fas fa-utensils"></i> FitTrack</h1>
+      <span>Проследяване на хранене</span>
+    </header>
 
-  <h1>🥗 FitTrack – Хранене</h1>
+    <div class="card">
+      <h2><i class="fas fa-plus-circle"></i> Добави храна</h2>
+      <form id="mealForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="meal_name"><i class="fas fa-tag"></i> Име на храната</label>
+            <input type="text" id="meal_name" placeholder="Например: Ябълка" required>
+          </div>
+          <div class="form-group">
+            <label for="calories"><i class="fas fa-fire"></i> Калории (на порция)</label>
+            <input type="number" id="calories" placeholder="52" required>
+          </div>
+        </div>
+        <button type="submit" class="btn">
+          <i class="fas fa-plus"></i> Добави храна
+        </button>
+      </form>
+    </div>
 
-  <h2>Добави хранене</h2>
-  <form id="mealForm">
-    <input type="text" id="meal_name" placeholder="Име на храна" required>
-    <input type="number" id="calories" placeholder="Калории" required>
-    <button type="submit">Добави</button>
-  </form>
-
-  <h2>Списък с хранения</h2>
-  <ul id="meals"></ul>
+    <div class="card">
+      <h2><i class="fas fa-list"></i> Списък с храни</h2>
+      <ul id="meals" class="meal-list"></ul>
+    </div>
+  </div>
 
   <script src="meals.js"></script>
 </body>
